@@ -1,0 +1,6 @@
+dos(['"C:\Program Files\synopsys\Hspice_C-2009.03-SP1\BIN\hspice.exe" -i sram_mc.sp']);
+
+% add the directory of HSPICE toolbox into matlab
+x = loadsig('sram_mc.tr0');
+
+v = x(3,1).data(end,:) - x(7,1).data(end,:);

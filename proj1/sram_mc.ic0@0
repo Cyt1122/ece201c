@@ -1,0 +1,21 @@
+* "simulator" "HSPICE" 
+* "version" "C-2009.03-SP1 32-BIT"
+* "format" "HSP"
+* "rundate" "18:55:55 10/10/2013 "
+* "netlist" "c:\dropbox\9teaching\2013winter\hws\hw4\hspice_withguide\sram_mc.sp "
+* "runtitle" "*test the normal sram_cell during reading status"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ bit =   1.3000        
++ bl =   0.            
++ blb =   0.            
++ data =   1.2984        
++ nbit =   1.3000        
++ ndata = 243.0501m       
++ vdd_node =   1.3000        
++ word =   1.3000        
+***   END: Saved Operating Point ***                     

@@ -1,0 +1,2670 @@
+ ****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+  Copyright (C) 2009 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: c:\dropbox\9teaching\2013winter\hws\hw4\hspice_withguide\sram_mc.s
+  lic:  
+  lic: FLEXlm: v8.5b 
+  lic: USER:   wei                  HOSTNAME: alienware 
+  lic: HOSTID: 848f69f5f527         PID:      12824 
+  lic: Using FLEXlm license file: 
+  lic: 27000@localhost 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12 
+  lic: NODE LOCKED license on hostid 848f69f5f527 
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_C-2009.03-SP1\meta.cfg
+ Init: hspice initialization file: C:\synopsys\Hspice_C-2009.03-SP1\hspice.ini
+
+
+
+
+
+ ***********************************************************************
+ ** runlvl is invoked, you can disable it by:
+      a) Add option runlvl=0 to your current simulation job.
+      b) Copy $installdir/hspice.ini to your HOME directory and
+         customize it by adding option runlvl=0, which disables
+         it for all of your simulation jobs.
+      c) Re-invoke $installdir/bin/config program and unselect the
+         option runlvl setting in box 'hspice.ini' which disables
+         it for whole group simulation jobs.
+
+ ** runlvl is invoked, some options are ignored or automatically set:
+      Options below are automatically set(user setting will overwrite them):
+      if runlvl=[1|2|3|4|5|6],  .option bypass=2
+
+      Options below are ignored, they are replaced by automated algorithms:
+        lvltim    dvdt      ft    fast   trtol  absvar  relvar
+          relq  chgtol    dvtr    imin    itl3    rmax
+
+ ** runlvl is invoked, actual option value used by HSPICE are:
+       runlvl= 3       bypass= 2      mbypass=   2.00   bytol= 100.00u
+ ***********************************************************************
+
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  mos   model parameters tnom=  25.000 temp=  25.000 *****
+ 
+Model Name: nmos1  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.75e-009 
+    TOXE = 1.75e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.75e-009 
+    DTOX = 6.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 1.474e+005 
+    A0 =      1 
+    AGS =      0 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA =   0.04 
+    NSUB = 6e+016 
+    NDEP = 3.24e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =      0 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-010 
+    DVTP1 =    0.1 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 =      0 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =    0.5 
+    DSUB =    0.1 
+    VTH0 = 0.4433 
+    EU =   1.67 
+    UA = 6e-010 
+    UA1 = 4.31e-009 
+    UB = 1.2e-018 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.04398 
+    UTE =   -1.5 
+    VOFF =  -0.13 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     80 
+    RSW =     80 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.02 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = -0.005 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 1e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =  0.012 
+    BIGC = 0.0028 
+    CIGC =  0.002 
+    AIGSD =  0.012 
+    BIGSD = 0.0028 
+    CIGSD =  0.002 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =  -0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.195e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.25e+041 
+    NOIB = 3.125e+026 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ 
+Model Name: nmos2  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.75e-009 
+    TOXE = 1.75e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.75e-009 
+    DTOX = 6.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 1.474e+005 
+    A0 =      1 
+    AGS =      0 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA =   0.04 
+    NSUB = 6e+016 
+    NDEP = 3.24e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =      0 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-010 
+    DVTP1 =    0.1 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 =      0 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =    0.5 
+    DSUB =    0.1 
+    VTH0 =  0.408 
+    EU =   1.67 
+    UA = 6e-010 
+    UA1 = 4.31e-009 
+    UB = 1.2e-018 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.04398 
+    UTE =   -1.5 
+    VOFF =  -0.13 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     80 
+    RSW =     80 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.02 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = -0.005 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 1e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =  0.012 
+    BIGC = 0.0028 
+    CIGC =  0.002 
+    AIGSD =  0.012 
+    BIGSD = 0.0028 
+    CIGSD =  0.002 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =  -0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.195e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.25e+041 
+    NOIB = 3.125e+026 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ 
+Model Name: nmos3  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.75e-009 
+    TOXE = 1.75e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.75e-009 
+    DTOX = 6.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 1.474e+005 
+    A0 =      1 
+    AGS =      0 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA =   0.04 
+    NSUB = 6e+016 
+    NDEP = 3.24e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =      0 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-010 
+    DVTP1 =    0.1 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 =      0 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =    0.5 
+    DSUB =    0.1 
+    VTH0 =  0.489 
+    EU =   1.67 
+    UA = 6e-010 
+    UA1 = 4.31e-009 
+    UB = 1.2e-018 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.04398 
+    UTE =   -1.5 
+    VOFF =  -0.13 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     80 
+    RSW =     80 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.02 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = -0.005 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 1e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =  0.012 
+    BIGC = 0.0028 
+    CIGC =  0.002 
+    AIGSD =  0.012 
+    BIGSD = 0.0028 
+    CIGSD =  0.002 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =  -0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.195e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.25e+041 
+    NOIB = 3.125e+026 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ 
+Model Name: nmos4  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.75e-009 
+    TOXE = 1.75e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.75e-009 
+    DTOX = 6.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 1.474e+005 
+    A0 =      1 
+    AGS =      0 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA =   0.04 
+    NSUB = 6e+016 
+    NDEP = 3.24e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =      0 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-010 
+    DVTP1 =    0.1 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 =      0 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =    0.5 
+    DSUB =    0.1 
+    VTH0 = 0.4355 
+    EU =   1.67 
+    UA = 6e-010 
+    UA1 = 4.31e-009 
+    UB = 1.2e-018 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.04398 
+    UTE =   -1.5 
+    VOFF =  -0.13 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     80 
+    RSW =     80 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.02 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = -0.005 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 1e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =  0.012 
+    BIGC = 0.0028 
+    CIGC =  0.002 
+    AIGSD =  0.012 
+    BIGSD = 0.0028 
+    CIGSD =  0.002 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =  -0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.195e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.25e+041 
+    NOIB = 3.125e+026 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ 
+Model Name: pmos1  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.85e-009 
+    TOXE = 1.85e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.85e-009 
+    DTOX = 7.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 7e+004 
+    A0 =      1 
+    AGS = 1e-020 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA = -0.047 
+    NSUB = 6e+016 
+    NDEP = 2.44e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =  -0.01 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-011 
+    DVTP1 =   0.05 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 = -0.032 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =   0.56 
+    DSUB =    0.1 
+    VTH0 = -0.3757 
+    EU =      1 
+    UA = 2e-009 
+    UA1 = 4.31e-009 
+    UB = 5e-019 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.0044 
+    UTE =   -1.5 
+    VOFF = -0.126 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     75 
+    RSW =     75 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.12 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = 3.4e-008 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 9.58e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =   0.69 
+    BIGC = 0.0012 
+    CIGC = 0.0008 
+    AIGSD = 0.0087 
+    BIGSD = 0.0012 
+    CIGSD = 0.0008 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =   0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.183e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.188e+040 
+    NOIB = 1.5e+025 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ 
+Model Name: pmos2  
+
+ BSIM4 Model (Level 54)
+
+    MOBMOD = 0
+    BINUNIT = 1
+    PARAMCHK = 1
+    CAPMOD = 2
+    DIOMOD = 1
+    RDSMOD = 0
+    TRNQSMOD = 0
+    ACNQSMOD = 0
+    RBODYMOD = 1
+    RGATEMOD = 1
+    PERMOD = 1
+    GEOMOD = 1
+    RGEOMOD = 0
+    FNOIMOD = 1
+    TNOIMOD = 0
+    IGCMOD = 1
+    IGBMOD = 1
+    STIMOD = 0
+    VERSION =      4 
+    TOXREF = 1.85e-009 
+    TOXE = 1.85e-009 
+    TOXP = 1.1e-009 
+    TOXM = 1.85e-009 
+    DTOX = 7.5e-010 
+    EPSROX =    3.9 
+    CDSC =      0 
+    CDSCB =      0 
+    CDSCD =      0 
+    CIT =      0 
+    NFACTOR =    2.1 
+    XJ = 1.4e-008 
+    VSAT = 7e+004 
+    A0 =      1 
+    AGS = 1e-020 
+    A1 =      0 
+    A2 =      1 
+    AT = 3.3e+004 
+    KETA = -0.047 
+    NSUB = 6e+016 
+    NDEP = 2.44e+018 
+    NSD = 2e+020 
+    NGATE = 2e+020 
+    GAMMA1 =      0 
+    GAMMA2 =      0 
+    VBX =      0 
+    VBM =     -3 
+    XT = 1.55e-007 
+    K1 =    0.4 
+    KT1 =  -0.11 
+    KT1L =      0 
+    KT2 =  0.022 
+    K2 =  -0.01 
+    K3 =      0 
+    K3B =      0 
+    LPE0 =      0 
+    LPEB =      0 
+    DVTP0 = 1e-011 
+    DVTP1 =   0.05 
+    W0 = 2.5e-006 
+    DVT0 =      1 
+    DVT1 =      2 
+    DVT2 = -0.032 
+    DVT0W =      0 
+    DVT1W =      0 
+    DVT2W =      0 
+    DROUT =   0.56 
+    DSUB =    0.1 
+    VTH0 = -0.4044 
+    EU =      1 
+    UA = 2e-009 
+    UA1 = 4.31e-009 
+    UB = 5e-019 
+    UB1 = 7.61e-018 
+    UC =      0 
+    UC1 = -5.6e-011 
+    U0 = 0.0044 
+    UTE =   -1.5 
+    VOFF = -0.126 
+    VOFFL =      0 
+    MINV =   0.05 
+    FPROUT =    0.2 
+    PDITS =   0.08 
+    PDITSD =   0.23 
+    PDITSL = 2.3e+006 
+    DELTA =   0.01 
+    RDSW =    155 
+    RDSWMIN =      0 
+    RDWMIN =      0 
+    RSWMIN =      0 
+    RDW =     75 
+    RSW =     75 
+    PRWG =      0 
+    PRWB =      0 
+    PRT =      0 
+    ETA0 = 0.0049 
+    ETAB =      0 
+    PCLM =   0.12 
+    PDIBLC1 =  0.001 
+    PDIBLC2 =  0.001 
+    PDIBLCB = 3.4e-008 
+    PSCBE1 = 8.14e+008 
+    PSCBE2 = 9.58e-007 
+    PVAG = 1e-020 
+    WR =      1 
+    DWG =      0 
+    DWB =      0 
+    XW =      0 
+    XWREF =      0 
+    XL = -2e-008 
+    XLREF = -2e-008 
+    B0 =      0 
+    B1 =      0 
+    ALPHA0 =  0.074 
+    ALPHA1 =  0.005 
+    AGIDL = 0.0002 
+    BGIDL = 2.1e+009 
+    CGIDL = 0.0002 
+    PHIN =      0 
+    EGIDL =    0.8 
+    AIGC =   0.69 
+    BIGC = 0.0012 
+    CIGC = 0.0008 
+    AIGSD = 0.0087 
+    BIGSD = 0.0012 
+    CIGSD = 0.0008 
+    AIGBACC =  0.012 
+    BIGBACC = 0.0028 
+    CIGBACC =  0.002 
+    AIGBINV =  0.014 
+    BIGBINV =  0.004 
+    CIGBINV =  0.004 
+    NIGC =      1 
+    NIGBINV =      3 
+    NIGBACC =      1 
+    NTOX =      1 
+    EIGBINV =    1.1 
+    PIGCD =      1 
+    POXEDGE =      1 
+    XRCRG1 =     12 
+    TNOIA =    1.5 
+    TNOIB =    3.5 
+    NTNOI =      1 
+    XRCRG2 =      5 
+    BETA0 =     30 
+    IJTHDFWD =   0.01 
+    IJTHSFWD =   0.01 
+    IJTHDREV =  0.001 
+    IJTHSREV =  0.001 
+    XJBVD =      1 
+    XJBVS =      1 
+    BVD =     10 
+    BVS =     10 
+    VFB =   0.55 
+    GBMIN = 1e-010 
+    RBDB =     15 
+    RBPB =      5 
+    RBSB =     15 
+    RBPS =     15 
+    RBPD =     15 
+    CGSL = 2.653e-010 
+    CGDL = 2.653e-010 
+    CKAPPAS =   0.03 
+    CKAPPAD =   0.03 
+    CF = 1.183e-010 
+    CLC = 1e-007 
+    CLE =    0.6 
+    DWC = 5e-009 
+    DLC = 3.75e-009 
+    DLCIG = 3.75e-009 
+    DWJ =      0 
+    VFBCV =     -1 
+    ACDE =      1 
+    MOIN =     15 
+    NOFF =    0.9 
+    VOFFCV =   0.02 
+    DMCG =      0 
+    DMCI =      0 
+    DMDG =      0 
+    DMCGT =      0 
+    XGW =      0 
+    XGL =      0 
+    RSHG =    0.4 
+    NGCON =      1 
+    TCJ =  0.001 
+    TPB =  0.005 
+    TCJSW =  0.001 
+    TPBSW =  0.005 
+    TCJSWG =  0.001 
+    TPBSWG =  0.005 
+    SK0 =      0 
+    SK1 =      0 
+    SK2 =      0 
+    SL = 2e-006 
+    SW = 2e-006 
+    K =      0 
+    TNOM =  300.1 
+    CGSO = 1.1e-010 
+    CGDO = 1.1e-010 
+    CGBO = 2.56e-011 
+    XPART =      0 
+    RSH =      5 
+    JSS = 0.0001 
+    JSWS = 1e-011 
+    JSWGS = 1e-010 
+    PBS =      1 
+    MJS =    0.5 
+    PBSWS =      1 
+    MJSWS =   0.33 
+    CJS = 0.0005 
+    CJSWS = 5e-010 
+    NJS =      1 
+    PBSWGS =      1 
+    MJSWGS =   0.33 
+    CJSWGS = 3e-010 
+    XTIS =      3 
+    JSD = 0.0001 
+    JSWD = 1e-011 
+    JSWGD = 1e-010 
+    PBD =      1 
+    MJD =    0.5 
+    PBSWD =      1 
+    MJSWD =   0.33 
+    CJD = 0.0005 
+    CJSWD = 5e-010 
+    NJD =      1 
+    PBSWGD =      1 
+    MJSWGD =   0.33 
+    CJSWGD = 5e-010 
+    XTID =      3 
+    LMLT =      1 
+    WMLT =      1 
+    LINT = 3.75e-009 
+    LL =      0 
+    LLC =      0 
+    LLN =      1 
+    LW =      0 
+    LWC =      0 
+    LWN =      1 
+    LWL =      0 
+    LWLC =      0 
+    LMIN =      0 
+    LMAX =      1 
+    WINT = 5e-009 
+    WL =      0 
+    WLC =      0 
+    WLN =      1 
+    WW =      0 
+    WWC =      0 
+    WWN =      1 
+    WWL =      0 
+    WWLC =      0 
+    WMIN =      0 
+    WMAX =      1 
+    NOIA = 6.188e+040 
+    NOIB = 1.5e+025 
+    NOIC = 8.75e+009 
+    EM = 4.1e+007 
+    EF =      1 
+    AF =      1 
+    KF =      0 
+    TRS =      0 
+    TRD =      0 
+ 
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos1 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos2 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos3 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos4 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos1 with w=3.25e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos2 with w=3.25e-007 l=1e-007.
+
+ 
+
+ **warning** only 1 connection at node        0:bl               defined in subckt 0               
+        : called in element     0:cblb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             defined in subckt 0                at line    20
+          within the hspice source, library or include file.
+ related element is ignored, and node is isolated.
+
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 3         bypass  = 2         
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos1 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos2 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos3 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos4 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos1 with w=3.25e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos2 with w=3.25e-007 l=1e-007.
+
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  operating point information tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is all       simulation time is     0.     
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:bit     =   1.3000  0:bl      =   0.      0:blb     =   0.     
+ +0:data    =   1.2984  0:nbit    =   1.3000  0:ndata   = 243.0501m
+ +0:vdd_node=   1.3000  0:word    =   1.3000 
+
+
+ ****  voltage sources
+
+ subckt                        
+ element  0:vdd      0:v_wd    
+  volts      1.3000     1.3000 
+  current -179.2510n  -10.9587n
+  power    233.0263n   14.2463n
+
+     total voltage source power dissipation=  247.2727n       watts
+
+
+
+
+ **** mosfets
+
+
+ subckt                                                                    
+ element  0:mpl      0:mnl      0:mpr      0:mnr      0:mnal     0:mnar    
+ model    0:pmos1    0:nmos1    0:pmos2    0:nmos2    0:nmos3    0:nmos4   
+ region       Linear     Cutoff     Cutoff     Linear     Cutoff   Saturati
+  id      -179.1931n  113.8714n  -40.9397p  209.0268u    2.3873f  208.9895u
+  ibs     -3.336e-24  1.253e-23 -1.001e-24  1.622e-22   -1.2985p -243.0913f
+  ibd        2.1827f   -1.3084p    1.0669p -253.0493f   -1.3100p   -1.3100p
+  vgs       -1.0569   243.0501m   -1.5874m    1.2984     1.5874m    1.0569 
+  vds       -1.5874m    1.2984    -1.0569   243.0501m    1.5874m    1.0569 
+  vbs        0.         0.         0.         0.        -1.2984  -243.0501m
+  vth     -375.7429m  431.9095m -392.9166m  405.9561m  702.9422m  474.4983m
+  vdsat   -588.4906m   43.7618m  -45.0692m  546.3218m   43.3916m  394.3058m
+  vod     -681.2070m -188.8594m  391.3292m  892.4565m -701.3548m  582.4516m
+  beta     178.2086u    3.5476m  196.3445u    2.2976m    2.5760m    2.4985m
+  gam eff  400.0000m  400.0000m  400.0000m  400.0000m  400.0000m  400.0000m
+  gm       182.0355n    2.5177u    1.0202n  117.3120u   67.2431f  450.5694u
+  gds      112.7280u   34.6385n   18.4639p  668.1700u    1.4730p   14.2220u
+  gmb       72.3166n  596.7079n  265.5728p   54.8920u   11.8686f  113.9726u
+  cdtot    781.1025a  235.9440a  208.3700a  581.2313a  288.4848a  287.0226a
+  cgtot    927.2363a  400.8988a  335.2837a  979.8590a  388.7196a  893.4735a
+  cstot    553.6175a  471.0544a  385.8599a  758.1296a  374.2351a  773.8259a
+  cbtot    544.1394a  578.7319a  517.2147a  599.6918a  466.7866a  524.3730a
+  cgs      501.5057a  171.4486a  125.8645a  680.5836a  146.2831a  736.4014a
+  cgd      427.7808a   93.4672a   80.2876a  298.6903a  146.0451a  141.7011a
+
+
+
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is voltage   simulation time is     0.     
+
+   *** data name = data             , index =     1 ***
+
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:bit     =   1.3000  0:bl      =   0.      0:blb     =   0.     
+ +0:data    =   1.2984  0:nbit    =   1.3000  0:ndata   = 243.0501m
+ +0:vdd_node=   1.3000  0:word    =   1.3000 
+
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+x
+
+        time    voltage      voltage    
+                    bit         nbit    
+    0.            1.3000       1.3000   
+  100.00000f      1.3000       1.2318   
+  200.00000f      1.3000       1.1636   
+  300.00000f      1.3000       1.0954   
+  400.00000f      1.3000       1.0318   
+  500.00000f      1.3000     968.8634m  
+  600.00000f      1.3000     905.9127m  
+  700.00000f      1.3000     845.0694m  
+  800.00000f      1.3000     784.9285m  
+  900.00000f      1.3000     724.7877m  
+    1.00000p      1.3000     685.0805m  
+    1.10000p      1.3000     646.8425m  
+    1.20000p      1.3000     608.6044m  
+    1.30000p      1.3000     570.3663m  
+    1.40000p      1.3000     532.1282m  
+    1.50000p      1.3000     493.8902m  
+    1.60000p      1.3000     455.6521m  
+    1.70000p      1.3000     417.4140m  
+    1.80000p      1.3000     379.1759m  
+    1.90000p      1.3000     364.2940m  
+    2.00000p      1.3000     351.4902m  
+    2.10000p      1.3000     338.6864m  
+    2.20000p      1.3000     325.8826m  
+    2.30000p      1.3000     313.0788m  
+    2.40000p      1.3000     300.2751m  
+    2.50000p      1.3000     287.4713m  
+    2.60000p      1.3000     279.9642m  
+    2.70000p      1.3000     273.0897m  
+    2.80000p      1.3000     266.2152m  
+    2.90000p      1.3000     259.3407m  
+    3.00000p      1.3000     252.4663m  
+    3.10000p      1.3000     245.5918m  
+    3.20000p      1.3000     238.7173m  
+    3.30000p      1.3000     231.8428m  
+    3.40000p      1.3000     224.9683m  
+    3.50000p      1.3000     218.0939m  
+    3.60000p      1.3000     211.2194m  
+    3.70000p      1.3000     204.3449m  
+    3.80000p      1.3000     198.3985m  
+    3.90000p      1.3000     193.8839m  
+    4.00000p      1.3000     189.3692m  
+    4.10000p      1.3000     184.8545m  
+    4.20000p      1.3000     180.3398m  
+    4.30000p      1.3000     175.8251m  
+    4.40000p      1.3000     171.3104m  
+    4.50000p      1.3000     166.7958m  
+    4.60000p      1.3000     162.2811m  
+    4.70000p      1.3000     158.7559m  
+    4.80000p      1.3000     155.3235m  
+    4.90000p      1.3000     151.8912m  
+    5.00000p      1.3000     148.4589m  
+    5.10000p      1.3000     145.0265m  
+    5.20000p      1.3000     141.5942m  
+    5.30000p      1.3000     138.1619m  
+    5.40000p      1.3000     134.7295m  
+    5.50000p      1.3000     131.2972m  
+    5.60000p      1.3000     127.8649m  
+    5.70000p      1.3000     124.4325m  
+    5.80000p      1.3000     121.0002m  
+    5.90000p      1.3000     117.9485m  
+    6.00000p      1.3000     115.4354m  
+    6.10000p      1.3000     112.9222m  
+    6.20000p      1.3000     110.4091m  
+    6.30000p      1.3000     107.8959m  
+    6.40000p      1.3000     105.3827m  
+    6.50000p      1.3000     102.8696m  
+    6.60000p      1.3000     100.3564m  
+    6.70000p      1.3000      97.8433m  
+    6.80000p      1.3000      95.3301m  
+    6.90000p      1.3000      92.8169m  
+    7.00000p      1.3000      90.3038m  
+    7.10000p      1.3000      87.7906m  
+    7.20000p      1.3000      85.8956m  
+    7.30000p      1.3000      84.0585m  
+    7.40000p      1.3000      82.2215m  
+    7.50000p      1.3000      80.3845m  
+    7.60000p      1.3000      78.5474m  
+    7.70000p      1.3000      76.7104m  
+    7.80000p      1.3000      74.8734m  
+    7.90000p      1.3000      73.0364m  
+    8.00000p      1.3000      71.1993m  
+    8.10000p      1.3000      69.3623m  
+    8.20000p      1.3000      67.5253m  
+    8.30000p      1.3000      65.6882m  
+    8.40000p      1.3000      64.0571m  
+    8.50000p      1.3000      62.7170m  
+    8.60000p      1.3000      61.3770m  
+    8.70000p      1.3000      60.0369m  
+    8.80000p      1.3000      58.6969m  
+    8.90000p      1.3000      57.3569m  
+    9.00000p      1.3000      56.0168m  
+    9.10000p      1.3000      54.6768m  
+    9.20000p      1.3000      53.3367m  
+    9.30000p      1.3000      51.9967m  
+    9.40000p      1.3000      50.6567m  
+    9.50000p      1.3000      49.3166m  
+    9.60000p      1.3000      47.9766m  
+    9.70000p      1.3000      46.9681m  
+    9.80000p      1.3000      45.9907m  
+    9.90000p      1.3000      45.0133m  
+   10.00000p      1.3000      44.0359m  
+   10.10000p      1.3000      43.0586m  
+   10.20000p      1.3000      42.0812m  
+   10.30000p      1.3000      41.1038m  
+   10.40000p      1.3000      40.1264m  
+   10.50000p      1.3000      39.1490m  
+   10.60000p      1.3000      38.1717m  
+   10.70000p      1.3000      37.1943m  
+   10.80000p      1.3000      36.2169m  
+   10.90000p      1.3000      35.3499m  
+   11.00000p      1.3000      34.6389m  
+   11.10000p      1.3000      33.9280m  
+   11.20000p      1.3000      33.2170m  
+   11.30000p      1.3000      32.5061m  
+   11.40000p      1.3000      31.7951m  
+   11.50000p      1.3000      31.0842m  
+   11.60000p      1.3000      30.3733m  
+   11.70000p      1.3000      29.6623m  
+   11.80000p      1.3000      28.9514m  
+   11.90000p      1.3000      28.2404m  
+   12.00000p      1.3000      27.5295m  
+   12.10000p      1.3000      26.8185m  
+   12.20000p      1.3000      26.2835m  
+   12.30000p      1.3000      25.7650m  
+   12.40000p      1.3000      25.2465m  
+   12.50000p      1.3000      24.7280m  
+   12.60000p      1.3000      24.2095m  
+   12.70000p      1.3000      23.6910m  
+   12.80000p      1.3000      23.1725m  
+   12.90000p      1.3000      22.6540m  
+   13.00000p      1.3000      22.1355m  
+   13.10000p      1.3000      21.6170m  
+   13.20000p      1.3000      21.0985m  
+   13.30000p      1.3000      20.5800m  
+   13.40000p      1.3000      20.1200m  
+   13.50000p      1.3000      19.7428m  
+   13.60000p      1.3000      19.3656m  
+   13.70000p      1.3000      18.9884m  
+   13.80000p      1.3000      18.6111m  
+   13.90000p      1.3000      18.2339m  
+   14.00000p      1.3000      17.8567m  
+   14.10000p      1.3000      17.4794m  
+   14.20000p      1.3000      17.1022m  
+   14.30000p      1.3000      16.7250m  
+   14.40000p      1.3000      16.3478m  
+   14.50000p      1.3000      15.9705m  
+   14.60000p      1.3000      15.5933m  
+   14.70000p      1.3000      15.3379m  
+   14.80000p      1.3000      15.0940m  
+   14.90000p      1.3000      14.8500m  
+   15.00000p      1.3000      14.6061m  
+   15.10000p      1.3000      14.3621m  
+   15.20000p      1.3000      14.1182m  
+   15.30000p      1.3000      13.8742m  
+   15.40000p      1.3000      13.6303m  
+   15.50000p      1.3000      13.3863m  
+   15.60000p      1.3000      13.1424m  
+   15.70000p      1.3000      12.8984m  
+   15.80000p      1.3000      12.6545m  
+   15.90000p      1.3000      12.4241m  
+   16.00000p      1.3000      12.2128m  
+   16.10000p      1.3000      12.0015m  
+   16.20000p      1.3000      11.7902m  
+   16.30000p      1.3000      11.5789m  
+   16.40000p      1.3000      11.3675m  
+   16.50000p      1.3000      11.1562m  
+   16.60000p      1.3000      10.9449m  
+   16.70000p      1.3000      10.7336m  
+   16.80000p      1.3000      10.5223m  
+   16.90000p      1.3000      10.3110m  
+   17.00000p      1.3000      10.0997m  
+   17.10000p      1.3000       9.8884m  
+   17.20000p      1.3000       9.7282m  
+   17.30000p      1.3000       9.5727m  
+   17.40000p      1.3000       9.4172m  
+   17.50000p      1.3000       9.2617m  
+   17.60000p      1.3000       9.1063m  
+   17.70000p      1.3000       8.9508m  
+   17.80000p      1.3000       8.7953m  
+   17.90000p      1.3000       8.6398m  
+   18.00000p      1.3000       8.4844m  
+   18.10000p      1.3000       8.3289m  
+   18.20000p      1.3000       8.1734m  
+   18.30000p      1.3000       8.0179m  
+   18.40000p      1.3000       7.8792m  
+   18.50000p      1.3000       7.7640m  
+   18.60000p      1.3000       7.6488m  
+   18.70000p      1.3000       7.5337m  
+   18.80000p      1.3000       7.4185m  
+   18.90000p      1.3000       7.3033m  
+   19.00000p      1.3000       7.1882m  
+   19.10000p      1.3000       7.0730m  
+   19.20000p      1.3000       6.9578m  
+   19.30000p      1.3000       6.8426m  
+   19.40000p      1.3000       6.7275m  
+   19.50000p      1.3000       6.6123m  
+   19.60000p      1.3000       6.4971m  
+   19.70000p      1.3000       6.4086m  
+   19.80000p      1.3000       6.3227m  
+   19.90000p      1.3000       6.2367m  
+   20.00000p      1.3000       6.1507m  
+   20.10000p      1.3000       6.0647m  
+   20.20000p      1.3000       5.9787m  
+   20.30000p      1.3000       5.8927m  
+   20.40000p      1.3000       5.8067m  
+   20.50000p      1.3000       5.7207m  
+   20.60000p      1.3000       5.6347m  
+   20.70000p      1.3000       5.5487m  
+   20.80000p      1.3000       5.4628m  
+   20.90000p      1.3000       5.3855m  
+   21.00000p      1.3000       5.3206m  
+   21.10000p      1.3000       5.2558m  
+   21.20000p      1.3000       5.1909m  
+   21.30000p      1.3000       5.1261m  
+   21.40000p      1.3000       5.0612m  
+   21.50000p      1.3000       4.9963m  
+   21.60000p      1.3000       4.9315m  
+   21.70000p      1.3000       4.8666m  
+   21.80000p      1.3000       4.8018m  
+   21.90000p      1.3000       4.7369m  
+   22.00000p      1.3000       4.6720m  
+   22.10000p      1.3000       4.6072m  
+   22.20000p      1.3000       4.5563m  
+   22.30000p      1.3000       4.5068m  
+   22.40000p      1.3000       4.4573m  
+   22.50000p      1.3000       4.4077m  
+   22.60000p      1.3000       4.3582m  
+   22.70000p      1.3000       4.3087m  
+   22.80000p      1.3000       4.2591m  
+   22.90000p      1.3000       4.2096m  
+   23.00000p      1.3000       4.1601m  
+   23.10000p      1.3000       4.1105m  
+   23.20000p      1.3000       4.0610m  
+   23.30000p      1.3000       4.0115m  
+   23.40000p      1.3000       3.9666m  
+   23.50000p      1.3000       3.9282m  
+   23.60000p      1.3000       3.8898m  
+   23.70000p      1.3000       3.8514m  
+   23.80000p      1.3000       3.8131m  
+   23.90000p      1.3000       3.7747m  
+   24.00000p      1.3000       3.7363m  
+   24.10000p      1.3000       3.6979m  
+   24.20000p      1.3000       3.6595m  
+   24.30000p      1.3000       3.6212m  
+   24.40000p      1.3000       3.5828m  
+   24.50000p      1.3000       3.5444m  
+   24.60000p      1.3000       3.5060m  
+   24.70000p      1.3000       3.4730m  
+   24.80000p      1.3000       3.4406m  
+   24.90000p      1.3000       3.4081m  
+   25.00000p      1.3000       3.3756m  
+y
+
+          ***** job concluded
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos1 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos2 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos3 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos4 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos1 with w=3.25e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos2 with w=3.25e-007 l=1e-007.
+
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is voltage   simulation time is     0.     
+
+   *** data name = data             , index =     2 ***
+
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:bit     =   1.3000  0:bl      =   0.      0:blb     =   0.     
+ +0:data    =   1.2985  0:nbit    =   1.3000  0:ndata   = 232.9989m
+ +0:vdd_node=   1.3000  0:word    =   1.3000 
+
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+x
+
+        time    voltage      voltage    
+                    bit         nbit    
+    0.            1.3000       1.3000   
+  100.00000f      1.3000       1.2335   
+  200.00000f      1.3000       1.1671   
+  300.00000f      1.3000       1.1006   
+  400.00000f      1.3000       1.0386   
+  500.00000f      1.3000     977.1340m  
+  600.00000f      1.3000     915.6926m  
+  700.00000f      1.3000     856.2046m  
+  800.00000f      1.3000     797.3677m  
+  900.00000f      1.3000     738.5309m  
+    1.00000p      1.3000     697.1520m  
+    1.10000p      1.3000     658.4165m  
+    1.20000p      1.3000     619.6810m  
+    1.30000p      1.3000     580.9456m  
+    1.40000p      1.3000     542.2101m  
+    1.50000p      1.3000     503.4746m  
+    1.60000p      1.3000     464.7391m  
+    1.70000p      1.3000     426.0036m  
+    1.80000p      1.3000     387.2682m  
+    1.90000p      1.3000     361.4817m  
+    2.00000p      1.3000     342.7392m  
+    2.10000p      1.3000     323.9966m  
+    2.20000p      1.3000     305.2541m  
+    2.30000p      1.3000     297.6146m  
+    2.40000p      1.3000     290.2624m  
+    2.50000p      1.3000     282.9102m  
+    2.60000p      1.3000     275.7417m  
+    2.70000p      1.3000     268.9979m  
+    2.80000p      1.3000     262.2541m  
+    2.90000p      1.3000     255.5103m  
+    3.00000p      1.3000     248.7666m  
+    3.10000p      1.3000     242.0228m  
+    3.20000p      1.3000     235.2790m  
+    3.30000p      1.3000     228.5352m  
+    3.40000p      1.3000     221.7914m  
+    3.50000p      1.3000     215.0477m  
+    3.60000p      1.3000     208.3039m  
+    3.70000p      1.3000     201.5601m  
+    3.80000p      1.3000     194.8163m  
+    3.90000p      1.3000     189.9563m  
+    4.00000p      1.3000     185.5617m  
+    4.10000p      1.3000     181.1670m  
+    4.20000p      1.3000     176.7724m  
+    4.30000p      1.3000     172.3778m  
+    4.40000p      1.3000     167.9831m  
+    4.50000p      1.3000     163.5885m  
+    4.60000p      1.3000     159.1939m  
+    4.70000p      1.3000     154.9702m  
+    4.80000p      1.3000     151.6499m  
+    4.90000p      1.3000     148.3296m  
+    5.00000p      1.3000     145.0093m  
+    5.10000p      1.3000     141.6890m  
+    5.20000p      1.3000     138.3687m  
+    5.30000p      1.3000     135.0484m  
+    5.40000p      1.3000     131.7282m  
+    5.50000p      1.3000     128.4079m  
+    5.60000p      1.3000     125.0876m  
+    5.70000p      1.3000     121.7673m  
+    5.80000p      1.3000     118.4470m  
+    5.90000p      1.3000     115.1267m  
+    6.00000p      1.3000     112.3974m  
+    6.10000p      1.3000     109.9738m  
+    6.20000p      1.3000     107.5502m  
+    6.30000p      1.3000     105.1265m  
+    6.40000p      1.3000     102.7029m  
+    6.50000p      1.3000     100.2793m  
+    6.60000p      1.3000      97.8556m  
+    6.70000p      1.3000      95.4320m  
+    6.80000p      1.3000      93.0084m  
+    6.90000p      1.3000      90.5847m  
+    7.00000p      1.3000      88.1611m  
+    7.10000p      1.3000      85.7375m  
+    7.20000p      1.3000      83.4183m  
+    7.30000p      1.3000      81.6509m  
+    7.40000p      1.3000      79.8835m  
+    7.50000p      1.3000      78.1161m  
+    7.60000p      1.3000      76.3487m  
+    7.70000p      1.3000      74.5813m  
+    7.80000p      1.3000      72.8139m  
+    7.90000p      1.3000      71.0466m  
+    8.00000p      1.3000      69.2792m  
+    8.10000p      1.3000      67.5118m  
+    8.20000p      1.3000      65.7444m  
+    8.30000p      1.3000      63.9770m  
+    8.40000p      1.3000      62.2096m  
+    8.50000p      1.3000      60.7596m  
+    8.60000p      1.3000      59.4737m  
+    8.70000p      1.3000      58.1878m  
+    8.80000p      1.3000      56.9019m  
+    8.90000p      1.3000      55.6160m  
+    9.00000p      1.3000      54.3301m  
+    9.10000p      1.3000      53.0442m  
+    9.20000p      1.3000      51.7583m  
+    9.30000p      1.3000      50.4724m  
+    9.40000p      1.3000      49.1865m  
+    9.50000p      1.3000      47.9006m  
+    9.60000p      1.3000      46.6147m  
+    9.70000p      1.3000      45.3844m  
+    9.80000p      1.3000      44.4480m  
+    9.90000p      1.3000      43.5117m  
+   10.00000p      1.3000      42.5753m  
+   10.10000p      1.3000      41.6389m  
+   10.20000p      1.3000      40.7025m  
+   10.30000p      1.3000      39.7662m  
+   10.40000p      1.3000      38.8298m  
+   10.50000p      1.3000      37.8934m  
+   10.60000p      1.3000      36.9570m  
+   10.70000p      1.3000      36.0207m  
+   10.80000p      1.3000      35.0843m  
+   10.90000p      1.3000      34.1479m  
+   11.00000p      1.3000      33.3810m  
+   11.10000p      1.3000      32.7018m  
+   11.20000p      1.3000      32.0226m  
+   11.30000p      1.3000      31.3434m  
+   11.40000p      1.3000      30.6642m  
+   11.50000p      1.3000      29.9849m  
+   11.60000p      1.3000      29.3057m  
+   11.70000p      1.3000      28.6265m  
+   11.80000p      1.3000      27.9473m  
+   11.90000p      1.3000      27.2681m  
+   12.00000p      1.3000      26.5888m  
+   12.10000p      1.3000      25.9096m  
+   12.20000p      1.3000      25.2598m  
+   12.30000p      1.3000      24.7650m  
+   12.40000p      1.3000      24.2702m  
+   12.50000p      1.3000      23.7753m  
+   12.60000p      1.3000      23.2805m  
+   12.70000p      1.3000      22.7857m  
+   12.80000p      1.3000      22.2909m  
+   12.90000p      1.3000      21.7961m  
+   13.00000p      1.3000      21.3013m  
+   13.10000p      1.3000      20.8065m  
+   13.20000p      1.3000      20.3117m  
+   13.30000p      1.3000      19.8169m  
+   13.40000p      1.3000      19.3221m  
+   13.50000p      1.3000      18.9170m  
+   13.60000p      1.3000      18.5583m  
+   13.70000p      1.3000      18.1996m  
+   13.80000p      1.3000      17.8408m  
+   13.90000p      1.3000      17.4821m  
+   14.00000p      1.3000      17.1233m  
+   14.10000p      1.3000      16.7646m  
+   14.20000p      1.3000      16.4059m  
+   14.30000p      1.3000      16.0471m  
+   14.40000p      1.3000      15.6884m  
+   14.50000p      1.3000      15.3297m  
+   14.60000p      1.3000      14.9709m  
+   14.70000p      1.3000      14.6324m  
+   14.80000p      1.3000      14.4008m  
+   14.90000p      1.3000      14.1692m  
+   15.00000p      1.3000      13.9377m  
+   15.10000p      1.3000      13.7061m  
+   15.20000p      1.3000      13.4745m  
+   15.30000p      1.3000      13.2429m  
+   15.40000p      1.3000      13.0113m  
+   15.50000p      1.3000      12.7797m  
+   15.60000p      1.3000      12.5482m  
+   15.70000p      1.3000      12.3166m  
+   15.80000p      1.3000      12.0850m  
+   15.90000p      1.3000      11.8534m  
+   16.00000p      1.3000      11.6425m  
+   16.10000p      1.3000      11.4422m  
+   16.20000p      1.3000      11.2419m  
+   16.30000p      1.3000      11.0417m  
+   16.40000p      1.3000      10.8414m  
+   16.50000p      1.3000      10.6411m  
+   16.60000p      1.3000      10.4409m  
+   16.70000p      1.3000      10.2406m  
+   16.80000p      1.3000      10.0403m  
+   16.90000p      1.3000       9.8401m  
+   17.00000p      1.3000       9.6398m  
+   17.10000p      1.3000       9.4395m  
+   17.20000p      1.3000       9.2478m  
+   17.30000p      1.3000       9.1008m  
+   17.40000p      1.3000       8.9538m  
+   17.50000p      1.3000       8.8069m  
+   17.60000p      1.3000       8.6599m  
+   17.70000p      1.3000       8.5129m  
+   17.80000p      1.3000       8.3659m  
+   17.90000p      1.3000       8.2190m  
+   18.00000p      1.3000       8.0720m  
+   18.10000p      1.3000       7.9250m  
+   18.20000p      1.3000       7.7780m  
+   18.30000p      1.3000       7.6311m  
+   18.40000p      1.3000       7.4841m  
+   18.50000p      1.3000       7.3625m  
+   18.60000p      1.3000       7.2539m  
+   18.70000p      1.3000       7.1453m  
+   18.80000p      1.3000       7.0368m  
+   18.90000p      1.3000       6.9282m  
+   19.00000p      1.3000       6.8197m  
+   19.10000p      1.3000       6.7111m  
+   19.20000p      1.3000       6.6025m  
+   19.30000p      1.3000       6.4940m  
+   19.40000p      1.3000       6.3854m  
+   19.50000p      1.3000       6.2769m  
+   19.60000p      1.3000       6.1683m  
+   19.70000p      1.3000       6.0642m  
+   19.80000p      1.3000       5.9834m  
+   19.90000p      1.3000       5.9025m  
+   20.00000p      1.3000       5.8217m  
+   20.10000p      1.3000       5.7409m  
+   20.20000p      1.3000       5.6601m  
+   20.30000p      1.3000       5.5793m  
+   20.40000p      1.3000       5.4985m  
+   20.50000p      1.3000       5.4177m  
+   20.60000p      1.3000       5.3369m  
+   20.70000p      1.3000       5.2561m  
+   20.80000p      1.3000       5.1753m  
+   20.90000p      1.3000       5.0945m  
+   21.00000p      1.3000       5.0269m  
+   21.10000p      1.3000       4.9662m  
+   21.20000p      1.3000       4.9054m  
+   21.30000p      1.3000       4.8447m  
+   21.40000p      1.3000       4.7839m  
+   21.50000p      1.3000       4.7232m  
+   21.60000p      1.3000       4.6625m  
+   21.70000p      1.3000       4.6017m  
+   21.80000p      1.3000       4.5410m  
+   21.90000p      1.3000       4.4802m  
+   22.00000p      1.3000       4.4195m  
+   22.10000p      1.3000       4.3587m  
+   22.20000p      1.3000       4.3003m  
+   22.30000p      1.3000       4.2541m  
+   22.40000p      1.3000       4.2079m  
+   22.50000p      1.3000       4.1616m  
+   22.60000p      1.3000       4.1154m  
+   22.70000p      1.3000       4.0692m  
+   22.80000p      1.3000       4.0230m  
+   22.90000p      1.3000       3.9768m  
+   23.00000p      1.3000       3.9306m  
+   23.10000p      1.3000       3.8843m  
+   23.20000p      1.3000       3.8381m  
+   23.30000p      1.3000       3.7919m  
+   23.40000p      1.3000       3.7457m  
+   23.50000p      1.3000       3.7064m  
+   23.60000p      1.3000       3.6707m  
+   23.70000p      1.3000       3.6351m  
+   23.80000p      1.3000       3.5994m  
+   23.90000p      1.3000       3.5637m  
+   24.00000p      1.3000       3.5280m  
+   24.10000p      1.3000       3.4923m  
+   24.20000p      1.3000       3.4567m  
+   24.30000p      1.3000       3.4210m  
+   24.40000p      1.3000       3.3853m  
+   24.50000p      1.3000       3.3496m  
+   24.60000p      1.3000       3.3140m  
+   24.70000p      1.3000       3.2800m  
+   24.80000p      1.3000       3.2550m  
+   24.90000p      1.3000       3.2301m  
+   25.00000p      1.3000       3.2051m  
+y
+
+          ***** job concluded
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos1 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos2 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos3 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos4 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos1 with w=3.25e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos2 with w=3.25e-007 l=1e-007.
+
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is voltage   simulation time is     0.     
+
+   *** data name = data             , index =     3 ***
+
+    node    =voltage      node    =voltage      node    =voltage
+
+ +0:bit     =   1.3000  0:bl      =   0.      0:blb     =   0.     
+ +0:data    =   1.2992  0:nbit    =   1.3000  0:ndata   = 177.0632m
+ +0:vdd_node=   1.3000  0:word    =   1.3000 
+
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+x
+
+        time    voltage      voltage    
+                    bit         nbit    
+    0.            1.3000       1.3000   
+  100.00000f      1.3000       1.2471   
+  200.00000f      1.3000       1.1941   
+  300.00000f      1.3000       1.1412   
+  400.00000f      1.3000       1.0913   
+  500.00000f      1.3000       1.0419   
+  600.00000f      1.3000     992.4790m  
+  700.00000f      1.3000     944.4154m  
+  800.00000f      1.3000     896.8046m  
+  900.00000f      1.3000     849.1937m  
+    1.00000p      1.3000     804.0242m  
+    1.10000p      1.3000     764.2730m  
+    1.20000p      1.3000     724.5217m  
+    1.30000p      1.3000     684.7705m  
+    1.40000p      1.3000     645.0193m  
+    1.50000p      1.3000     605.2680m  
+    1.60000p      1.3000     565.5168m  
+    1.70000p      1.3000     525.7655m  
+    1.80000p      1.3000     486.0143m  
+    1.90000p      1.3000     446.2631m  
+    2.00000p      1.3000     407.4454m  
+    2.10000p      1.3000     385.3200m  
+    2.20000p      1.3000     363.1947m  
+    2.30000p      1.3000     341.0693m  
+    2.40000p      1.3000     318.9439m  
+    2.50000p      1.3000     296.8185m  
+    2.60000p      1.3000     274.7071m  
+    2.70000p      1.3000     265.6624m  
+    2.80000p      1.3000     256.6177m  
+    2.90000p      1.3000     247.5729m  
+    3.00000p      1.3000     238.5282m  
+    3.10000p      1.3000     229.4835m  
+    3.20000p      1.3000     220.4387m  
+    3.30000p      1.3000     214.9273m  
+    3.40000p      1.3000     209.6050m  
+    3.50000p      1.3000     204.2827m  
+    3.60000p      1.3000     198.9604m  
+    3.70000p      1.3000     193.6381m  
+    3.80000p      1.3000     188.3159m  
+    3.90000p      1.3000     182.9936m  
+    4.00000p      1.3000     177.6713m  
+    4.10000p      1.3000     172.3490m  
+    4.20000p      1.3000     167.0267m  
+    4.30000p      1.3000     161.7044m  
+    4.40000p      1.3000     157.6130m  
+    4.50000p      1.3000     154.0669m  
+    4.60000p      1.3000     150.5208m  
+    4.70000p      1.3000     146.9746m  
+    4.80000p      1.3000     143.4285m  
+    4.90000p      1.3000     139.8824m  
+    5.00000p      1.3000     136.3363m  
+    5.10000p      1.3000     132.7901m  
+    5.20000p      1.3000     129.2440m  
+    5.30000p      1.3000     125.6979m  
+    5.40000p      1.3000     122.1518m  
+    5.50000p      1.3000     118.7392m  
+    5.60000p      1.3000     116.2047m  
+    5.70000p      1.3000     113.6702m  
+    5.80000p      1.3000     111.1358m  
+    5.90000p      1.3000     108.6013m  
+    6.00000p      1.3000     106.0668m  
+    6.10000p      1.3000     103.5323m  
+    6.20000p      1.3000     100.9978m  
+    6.30000p      1.3000      98.4634m  
+    6.40000p      1.3000      95.9289m  
+    6.50000p      1.3000      93.3944m  
+    6.60000p      1.3000      90.8599m  
+    6.70000p      1.3000      88.3254m  
+    6.80000p      1.3000      86.2258m  
+    6.90000p      1.3000      84.3793m  
+    7.00000p      1.3000      82.5329m  
+    7.10000p      1.3000      80.6864m  
+    7.20000p      1.3000      78.8399m  
+    7.30000p      1.3000      76.9935m  
+    7.40000p      1.3000      75.1470m  
+    7.50000p      1.3000      73.3006m  
+    7.60000p      1.3000      71.4541m  
+    7.70000p      1.3000      69.6076m  
+    7.80000p      1.3000      67.7612m  
+    7.90000p      1.3000      65.9147m  
+    8.00000p      1.3000      64.1345m  
+    8.10000p      1.3000      62.7895m  
+    8.20000p      1.3000      61.4446m  
+    8.30000p      1.3000      60.0997m  
+    8.40000p      1.3000      58.7548m  
+    8.50000p      1.3000      57.4099m  
+    8.60000p      1.3000      56.0650m  
+    8.70000p      1.3000      54.7200m  
+    8.80000p      1.3000      53.3751m  
+    8.90000p      1.3000      52.0302m  
+    9.00000p      1.3000      50.6853m  
+    9.10000p      1.3000      49.3404m  
+    9.20000p      1.3000      47.9955m  
+    9.30000p      1.3000      46.8817m  
+    9.40000p      1.3000      45.9026m  
+    9.50000p      1.3000      44.9234m  
+    9.60000p      1.3000      43.9443m  
+    9.70000p      1.3000      42.9652m  
+    9.80000p      1.3000      41.9860m  
+    9.90000p      1.3000      41.0069m  
+   10.00000p      1.3000      40.0277m  
+   10.10000p      1.3000      39.0486m  
+   10.20000p      1.3000      38.0695m  
+   10.30000p      1.3000      37.0903m  
+   10.40000p      1.3000      36.1112m  
+   10.50000p      1.3000      35.1666m  
+   10.60000p      1.3000      34.4496m  
+   10.70000p      1.3000      33.7326m  
+   10.80000p      1.3000      33.0156m  
+   10.90000p      1.3000      32.2986m  
+   11.00000p      1.3000      31.5816m  
+   11.10000p      1.3000      30.8646m  
+   11.20000p      1.3000      30.1476m  
+   11.30000p      1.3000      29.4306m  
+   11.40000p      1.3000      28.7136m  
+   11.50000p      1.3000      27.9966m  
+   11.60000p      1.3000      27.2796m  
+   11.70000p      1.3000      26.5626m  
+   11.80000p      1.3000      25.9697m  
+   11.90000p      1.3000      25.4491m  
+   12.00000p      1.3000      24.9285m  
+   12.10000p      1.3000      24.4079m  
+   12.20000p      1.3000      23.8873m  
+   12.30000p      1.3000      23.3667m  
+   12.40000p      1.3000      22.8461m  
+   12.50000p      1.3000      22.3256m  
+   12.60000p      1.3000      21.8050m  
+   12.70000p      1.3000      21.2844m  
+   12.80000p      1.3000      20.7638m  
+   12.90000p      1.3000      20.2432m  
+   13.00000p      1.3000      19.7408m  
+   13.10000p      1.3000      19.3581m  
+   13.20000p      1.3000      18.9754m  
+   13.30000p      1.3000      18.5928m  
+   13.40000p      1.3000      18.2101m  
+   13.50000p      1.3000      17.8274m  
+   13.60000p      1.3000      17.4447m  
+   13.70000p      1.3000      17.0621m  
+   13.80000p      1.3000      16.6794m  
+   13.90000p      1.3000      16.2967m  
+   14.00000p      1.3000      15.9140m  
+   14.10000p      1.3000      15.5313m  
+   14.20000p      1.3000      15.1487m  
+   14.30000p      1.3000      14.8528m  
+   14.40000p      1.3000      14.6074m  
+   14.50000p      1.3000      14.3620m  
+   14.60000p      1.3000      14.1167m  
+   14.70000p      1.3000      13.8713m  
+   14.80000p      1.3000      13.6259m  
+   14.90000p      1.3000      13.3806m  
+   15.00000p      1.3000      13.1352m  
+   15.10000p      1.3000      12.8898m  
+   15.20000p      1.3000      12.6445m  
+   15.30000p      1.3000      12.3991m  
+   15.40000p      1.3000      12.1537m  
+   15.50000p      1.3000      11.9126m  
+   15.60000p      1.3000      11.6994m  
+   15.70000p      1.3000      11.4861m  
+   15.80000p      1.3000      11.2728m  
+   15.90000p      1.3000      11.0596m  
+   16.00000p      1.3000      10.8463m  
+   16.10000p      1.3000      10.6330m  
+   16.20000p      1.3000      10.4198m  
+   16.30000p      1.3000      10.2065m  
+   16.40000p      1.3000       9.9933m  
+   16.50000p      1.3000       9.7800m  
+   16.60000p      1.3000       9.5667m  
+   16.70000p      1.3000       9.3535m  
+   16.80000p      1.3000       9.1760m  
+   16.90000p      1.3000       9.0194m  
+   17.00000p      1.3000       8.8627m  
+   17.10000p      1.3000       8.7061m  
+   17.20000p      1.3000       8.5495m  
+   17.30000p      1.3000       8.3929m  
+   17.40000p      1.3000       8.2362m  
+   17.50000p      1.3000       8.0796m  
+   17.60000p      1.3000       7.9230m  
+   17.70000p      1.3000       7.7664m  
+   17.80000p      1.3000       7.6097m  
+   17.90000p      1.3000       7.4531m  
+   18.00000p      1.3000       7.3019m  
+   18.10000p      1.3000       7.1863m  
+   18.20000p      1.3000       7.0707m  
+   18.30000p      1.3000       6.9551m  
+   18.40000p      1.3000       6.8395m  
+   18.50000p      1.3000       6.7239m  
+   18.60000p      1.3000       6.6084m  
+   18.70000p      1.3000       6.4928m  
+   18.80000p      1.3000       6.3772m  
+   18.90000p      1.3000       6.2616m  
+   19.00000p      1.3000       6.1460m  
+   19.10000p      1.3000       6.0304m  
+   19.20000p      1.3000       5.9148m  
+   19.30000p      1.3000       5.8181m  
+   19.40000p      1.3000       5.7323m  
+   19.50000p      1.3000       5.6466m  
+   19.60000p      1.3000       5.5608m  
+   19.70000p      1.3000       5.4750m  
+   19.80000p      1.3000       5.3892m  
+   19.90000p      1.3000       5.3035m  
+   20.00000p      1.3000       5.2177m  
+   20.10000p      1.3000       5.1319m  
+   20.20000p      1.3000       5.0462m  
+   20.30000p      1.3000       4.9604m  
+   20.40000p      1.3000       4.8746m  
+   20.50000p      1.3000       4.7917m  
+   20.60000p      1.3000       4.7276m  
+   20.70000p      1.3000       4.6635m  
+   20.80000p      1.3000       4.5994m  
+   20.90000p      1.3000       4.5353m  
+   21.00000p      1.3000       4.4712m  
+   21.10000p      1.3000       4.4071m  
+   21.20000p      1.3000       4.3430m  
+   21.30000p      1.3000       4.2789m  
+   21.40000p      1.3000       4.2148m  
+   21.50000p      1.3000       4.1507m  
+   21.60000p      1.3000       4.0866m  
+   21.70000p      1.3000       4.0225m  
+   21.80000p      1.3000       3.9684m  
+   21.90000p      1.3000       3.9201m  
+   22.00000p      1.3000       3.8717m  
+   22.10000p      1.3000       3.8234m  
+   22.20000p      1.3000       3.7750m  
+   22.30000p      1.3000       3.7267m  
+   22.40000p      1.3000       3.6783m  
+   22.50000p      1.3000       3.6300m  
+   22.60000p      1.3000       3.5816m  
+   22.70000p      1.3000       3.5333m  
+   22.80000p      1.3000       3.4850m  
+   22.90000p      1.3000       3.4366m  
+   23.00000p      1.3000       3.3898m  
+   23.10000p      1.3000       3.3529m  
+   23.20000p      1.3000       3.3161m  
+   23.30000p      1.3000       3.2792m  
+   23.40000p      1.3000       3.2423m  
+   23.50000p      1.3000       3.2055m  
+   23.60000p      1.3000       3.1686m  
+   23.70000p      1.3000       3.1318m  
+   23.80000p      1.3000       3.0949m  
+   23.90000p      1.3000       3.0580m  
+   24.00000p      1.3000       3.0212m  
+   24.10000p      1.3000       2.9843m  
+   24.20000p      1.3000       2.9474m  
+   24.30000p      1.3000       2.9151m  
+   24.40000p      1.3000       2.8853m  
+   24.50000p      1.3000       2.8556m  
+   24.60000p      1.3000       2.8258m  
+   24.70000p      1.3000       2.7961m  
+   24.80000p      1.3000       2.7664m  
+   24.90000p      1.3000       2.7366m  
+   25.00000p      1.3000       2.7069m  
+y
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos1 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos2 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos3 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model nmos4 with w=3.75e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos1 with w=3.25e-007 l=1e-007.
+
+ Warning:  Acde = 1 may be too small in BSIM4 model pmos2 with w=3.25e-007 l=1e-007.
+
+ 
+
+          ***** job concluded
+1****** HSPICE -- C-2009.03-SP1 32-BIT (May 25 2009) winnt ******               
+ ******  
+ *test the normal sram_cell during reading status
+
+  ******  job statistics summary tnom=  25.000 temp=  27.000 *****
+
+  ******  HSPICE Threads Information  ******
+  Command Line Threads Count                  :     1
+  Available CPU Count                         :     8
+  Actual Model Evaluation(Load) Threads Count :     1
+  Actual Solver Threads Count                 :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      33 # elements   =       8
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       2
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       6 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.01           1          28
+  transient          0.07         753         162          71 rev=         0
+  readin             0.04
+  errchk             0.02
+  setup              0.01
+  output             0.00
+
+
+           total memory used          187  kbytes
+           total cpu time            0.19 seconds
+           total elapsed time        0.22 seconds
+           job started at     18:55:55 10/10/2013
+           job ended   at     18:55:56 10/10/2013
+
+
+ Init: hspice initialization file: C:\synopsys\Hspice_C-2009.03-SP1\hspice.ini
+  lic: Release hspice token(s) 

@@ -1,0 +1,37 @@
+I. How to HSPICE and MATLAB on eeapps server?
+HSPICE:
+source /usr/apps/synopsys/hspice-2009.03/SETUP
+hspice -i ./sram.sp
+MATLAB:
+install xming and configure Putty according to:
+http://www.seasnet.ucla.edu/UnixServers/ssh/xing
+Invoke matlab using /usr/apps/matlab/2011b/bin/matlab
+
+II. Procedures:
+Loop:
+	1.1 Generate 1000 samples for MC (QMC) simulations;
+		1.1.1 MC: generate r.v. uniform[0,1]  rand(0,1)
+			  QMC: generate a QMC sequence in [0,1]
+		1.1.2 normal distribution r.v.: norminv(,,) to convert uniform distribution into normal distribution
+	1.2 Write these samples in sweepdata file
+
+	2.1 run HSPICE and generate *.tr0 file
+
+	3.1 use matlab to extract the HSPICE result using HSPICE toolbox
+		x=loadsig('*.tr0');
+		(if loadsig is not available for you, just use mex loadsig.c to compile it)
+		
+	4 process the data and calcualte the Pr and FOM
+	
+if FOM<=0.1, converge
+else, go to step 1.1.
+
+
+III Other definitions:
+Failure rate = # of failed samples / # of total samples
+
+Performance merit:
+Determine whether a simulation is success.
+
+Figure of Merit:
+FOM = sigma_Pr/Pr
